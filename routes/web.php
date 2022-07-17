@@ -1,6 +1,10 @@
 <?php
 
+
+namespace app\Http\Controllers;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +18,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+
+Route::get('/users',[UserController::class , 'GetUsers']);
+Route::get('/edituser',[UserController::class , 'EditUser']);
+Route::get('/createuser',[UserController::class , 'CreateUser']);
+Route::get('/deleteuser',[UserController::class , 'DeleteUser']);
