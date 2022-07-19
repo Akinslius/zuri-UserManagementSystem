@@ -18,12 +18,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <!-- <li class="nav-item">
-          <a class="nav-link active mx-5" aria-current="page" href="#">Home</a>
-        </li> -->
-        <!-- <li class="nav-item">
-          <a class="nav-link active mx-5" aria-current="page" href="#">Home</a>
-        </li> -->
+       
         
        <a href="/" class="btn btn-secondary">Home</a>
     
@@ -50,11 +45,12 @@
     
   </thead>
   <tbody class="table-danger text-center">
+    @foreach ($users as $user)
   <tr>
-      <th scope="row">1</th>
-      <td>Otto</td>
-      <td>akinslius@gmail.com</td>
-      <td>081</td>
+      <th scope="row">{{$user->id}}</th>
+      <td>{{$user->name}}</td>
+      <td>{{$user->email}}</td>
+      <td>{{$user->phone}}</td>
       <td>
       <div class="d-grid gap-2 d-md-block">
   <button class="btn btn-info" type="button">Edit</button>
@@ -62,6 +58,7 @@
 </div>
       </td>
     </tr>
+    @endforeach
     
   </tbody>
 </table>
