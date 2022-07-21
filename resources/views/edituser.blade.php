@@ -13,29 +13,35 @@
 </head>
 <body>
     <div class="container">
-        <div class="text-center">
+        <div class="">
             <h1>Edit your details</h1>
 
-            <form action="" method="post">
+
+            <form action="{{url('/update/'.$user->id)}}" method="post">
+                @csrf
                 
             <!-- name -->
+            <input type="hidden" name="id" value="{{$user->id}}">
             <div class="form-outline mb-4 w-50 m-auto">
                 <label for="name" class="form-label">Name</label>
-                <input type="text" name="name" class="form-control" value="Edit your name" required>
+                <input type="text" name="name" class="form-control" value="{{$user->name}}" required>
 
             </div>
             <!-- email-->
             <div class="form-outline mb-4 w-50 m-auto">
                 <label for="email" class="form-label">Email</label>
-                <input type="text" name="email" class="form-control" value="Edit your email" required>
+                <input type="text" name="email" class="form-control" value="{{$user->email}}" required>
 
             </div>
 
             <!--phone-->
+            
             <div class="form-outline mb-4 w-50 m-auto">
-                <label for="phone" class="form-label">Phone Number</label>
-                <input type="tel" name="email" class="form-control" value="Edit your email" required>
-                <input type="number" name="" id="">
+            <label for="phone" class="form-label">Phone</label>
+                <input type="tel" name="phone" class="form-control" value="{{$user->phone}}" required>
+
+                <input type="submit" value="Update User" class="m-5 btn btn-info">
+                
 
 
             </div>

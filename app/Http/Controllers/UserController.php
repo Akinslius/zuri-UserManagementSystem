@@ -15,15 +15,30 @@ class UserController extends Controller
     }
 
     public function EditUser(Request $request,$id)
+
     {
         $user = user::find($id);
-        $user->name = $request->input('name');
-        $user->email = $request->input('email');
-        $user->phone = $request->input('phone');
-        $user->save();
-        return redirect('/users');
+        return view ('/edituser',['user'=>$user]);
+        // $user = user::find($id);
+        // $input = $request->all();
+        // $users->update($input);
+        // return redirect('/user')->with('flash_message', 'user Updated!'); 
+       
+    }
+    public function update(Request $request,$id)
+
+    {
+        $user = user::find($id);
+        $input = $request->all();
+        $user->update($input);
+        return redirect('/users')->with('flash_message', 'user Updated!'); 
+       
     }
 
+    public function CreateUser()
+    {
+        return view ('/createuser');
+    }
     public function create(Request $request)
     {
         $user = new user();
@@ -33,14 +48,20 @@ class UserController extends Controller
         $user->phone = $request->input('phone');
         $user->save();
         return redirect('/users');
+       
     }
-    
-    
-    public function destroy($id)
+    public function show($id)
     {
         $user = user::find($id);
-        $user->destroy();
-        return redirect('/users');
+        return view('/edituser', $user);
+    }
+   
+    
+    public function DeleteUser($id)
+    {
+        $user = user::find($id);
+        $user->destroy($id);
+        return redirect('/users')->with('flash_message', 'user Deleted!');
     }
 
 }

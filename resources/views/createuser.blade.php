@@ -16,8 +16,8 @@
         <div class="text-center">
             <h1>Edit your details</h1>
 
-            <form action="" method="post">
-                
+            <form action="{{url('/createuser')}}" method="post">
+                @csrf
             <!-- name -->
             <div class="form-outline mb-4 w-50 m-auto">
                 <label for="name" class="form-label">Name</label>
@@ -34,7 +34,7 @@
             <!--phone-->
             <div class="form-outline mb-4 w-50 m-auto">
                 <label for="phone" class="form-label">Phone Number</label>
-                <input type="tel" name="email" class="form-control" placeholder="Enter your Phone Number" required>
+                <input type="tel" name="phone" class="form-control" placeholder="Enter your Phone Number" required>
         
             </div>
             <input type="submit" value="Create User">

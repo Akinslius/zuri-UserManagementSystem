@@ -22,6 +22,9 @@ Route::get('/', function () {
 });
 
 Route::get('/users',[UserController::class , 'GetUsers']);
-Route::get('/edituser',[UserController::class , 'EditUser']);
+Route::get('/edituser/{id}',[UserController::class , 'EditUser']);
 Route::get('/createuser',[UserController::class , 'CreateUser']);
-Route::get('/deleteuser',[UserController::class , 'DeleteUser']);
+Route::post('/createuser',[UserController::class , 'create']);
+Route::post('/update/{id}',[UserController::class , 'update']);
+//Route::resource("/create", UserController::class);
+Route::get('/deleteuser/{id}',[UserController::class , 'DeleteUser']);
