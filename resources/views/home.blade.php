@@ -20,6 +20,13 @@
 </nav>
 
 <div class="container">
+    <div class="text-center m-5 p-5">
+    <a href="/users" class="btn btn-success mx-3">Show All Users</a>
+    <a href="/createuser" class="btn btn-primary">Create New User</a>
+    </div>
+    <!-- <div class="text-center m-5 p-5">
+    <a href="/users" class="btn btn-primary">Create New User</a>
+    </div> -->
     
 </div>
 </body>

@@ -14,22 +14,22 @@
 <body>
     <div class="container">
         <div class="">
-            <h1>Edit your details</h1>
+            <h1 class="text-center m-5">Edit your details</h1>
 
 
-            <form action="{{url('/update/'.$user->id)}}" method="post">
+            <form action="{{url('/update/'. $user->id)}}" method="post">
                 @csrf
                 
             <!-- name -->
             <input type="hidden" name="id" value="{{$user->id}}">
             <div class="form-outline mb-4 w-50 m-auto">
-                <label for="name" class="form-label">Name</label>
+                <label for="name" class="form-label"><b>Name</b></label>
                 <input type="text" name="name" class="form-control" value="{{$user->name}}" required>
 
             </div>
             <!-- email-->
             <div class="form-outline mb-4 w-50 m-auto">
-                <label for="email" class="form-label">Email</label>
+                <label for="email" class="form-label"><b>Email</b></label>
                 <input type="text" name="email" class="form-control" value="{{$user->email}}" required>
 
             </div>
@@ -37,16 +37,19 @@
             <!--phone-->
             
             <div class="form-outline mb-4 w-50 m-auto">
-            <label for="phone" class="form-label">Phone</label>
+            <label for="phone" class="form-label"><b>Phone</b></label>
                 <input type="tel" name="phone" class="form-control" value="{{$user->phone}}" required>
 
-                <input type="submit" value="Update User" class="m-5 btn btn-info">
-                
-
-
+            </div>
+            <div class="text-center">
+            <input type="submit" value="Update User" class="m-5 btn btn-info">
+            </div>
+            <div>
+            <a href="/users" class="btn btn-success">Back</a>
             </div>
             
             </form>
+           
 
 
 

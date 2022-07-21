@@ -13,31 +13,36 @@
 </head>
 <body>
     <div class="container">
-        <div class="text-center">
-            <h1>Edit your details</h1>
+        <div class="">
+        <h1 class="text-center m-5">Insert your details</h1>
 
             <form action="{{url('/createuser')}}" method="post">
                 @csrf
             <!-- name -->
             <div class="form-outline mb-4 w-50 m-auto">
-                <label for="name" class="form-label">Name</label>
+                <label for="name" class="form-label"><b>Name</b></label>
                 <input type="text" name="name" class="form-control" placeholder="Enter your Name" required>
 
             </div>
             <!-- email-->
             <div class="form-outline mb-4 w-50 m-auto">
-                <label for="email" class="form-label">Email</label>
+                <label for="email" class="form-label"><b>Email</b></label>
                 <input type="text" name="email" class="form-control" placeholder="Enter your Email Address" required>
 
             </div>
 
             <!--phone-->
             <div class="form-outline mb-4 w-50 m-auto">
-                <label for="phone" class="form-label">Phone Number</label>
+                <label for="phone" class="form-label"><b>Phone Number</b></label>
                 <input type="tel" name="phone" class="form-control" placeholder="Enter your Phone Number" required>
         
             </div>
-            <input type="submit" value="Create User">
+            <div class="text-center">
+            <input type="submit" value="Create User" class="m-5 btn btn-info">
+            </div>
+            <div>
+            <a href="/users" class="btn btn-success">Back</a>
+            </div>
             
             </form>
 
