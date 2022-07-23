@@ -3,21 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\user;
+use App\Models\User;
+use App\Models\users;
 
 class UserController extends Controller
 {
    
     public function GetUsers()
     {
-        $users = user::all();
-        return view ('users',['users'=>$users]);
+        $users = User::all();
+        $i = 0;
+        
+        return view ('users',['users'=>$users,'i'=>$i]);
     }
 
     public function EditUser(Request $request,$id)
 
     {
-        $user = user::find($id);
+        $user = User::find($id);
         return view ('/edituser',['user'=>$user]);
         // $user = user::find($id);
         // $input = $request->all();
@@ -28,7 +31,7 @@ class UserController extends Controller
     public function update(Request $request,$id)
 
     {
-        $user = user::find($id);
+        $user = User::find($id);
         $input = $request->all();
         $user->update($input);
         return redirect('/users')->with('flash_message', 'user Updated!'); 
@@ -41,7 +44,7 @@ class UserController extends Controller
     }
     public function create(Request $request)
     {
-        $user = new user();
+        $user = new User();
 
         $user->name = $request->input('name');
         $user->email = $request->input('email');
@@ -52,14 +55,14 @@ class UserController extends Controller
     }
     public function show($id)
     {
-        $user = user::find($id);
+        $user = User::find($id);
         return view('/edituser', $user);
     }
    
     
     public function DeleteUser($id)
     {
-        $user = user::find($id);
+        $user = User::find($id);
         $user->destroy($id);
         return redirect('/users')->with('flash_message', 'user Deleted!');
     }

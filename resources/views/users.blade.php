@@ -46,7 +46,9 @@
     
   </thead>
   <tbody class="table-danger text-center">
+
     @foreach ($users as $user)
+    
   <tr>
       <th scope="row">{{$user->id}}</th>
       <td>{{$user->name}}</td>
