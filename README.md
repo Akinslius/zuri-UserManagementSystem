@@ -1,1 +1,1 @@
-http://murmuring-fjord-96506.herokuapp.com/
+https://zuri-management-system.herokuapp.com/
