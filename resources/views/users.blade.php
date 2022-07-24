@@ -20,9 +20,6 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
        
-        
-       <a href="/" class="btn btn-secondary">Home</a>
-    
       </ul>
       
     </div>
@@ -31,6 +28,8 @@
 </nav>
 
 <div class="container">
+    <div class="row">
+    <div class="col-md-8">
     <div class="text-center">
         <h2>Get All User in the Database</h2>
     </div>
@@ -56,7 +55,7 @@
       <td>{{$user->phone}}</td>
       <td>
       <div class="d-grid gap-2 d-md-block">
-      <a href="{{url('/edituser/'. $user->id)}}" ><button class="btn btn-info" type="button">Edit</button> </a>
+      <a href="{{url('/edituser/'. $user->id)}}" ><button class="btn btn-info mb-3" type="button">Edit</button> </a>
       <a href="{{url('/deleteuser/'. $user->id)}}"><button class="btn btn-danger" type="button">Delete</button></a>
  
   
@@ -70,6 +69,16 @@
 <div class="text-center">
 <a href="/createuser" class="btn btn-secondary">Create User</a>
 </div>
+<div class="">
+<a href="/" class="btn btn-primary">Home</a>
+</div>
+
+
+    </div>
+
+    </div>
+    
+   
 
 
 

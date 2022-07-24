@@ -14,6 +14,7 @@
 </head>
 <body>
     <div class="container">
+        <div class="col-md-8">
         <div class="">
         <h1 class="text-center m-5">Insert your details</h1>
 
@@ -51,6 +52,9 @@
 
 
         </div>
+
+        </div>
+       
     </div>
     
 </body>

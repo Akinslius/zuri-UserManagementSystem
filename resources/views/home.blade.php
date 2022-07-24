@@ -21,10 +21,14 @@
 </nav>
 
 <div class="container">
+    <div class="col-md-8">
     <div class="text-center m-5 p-5">
-    <a href="/users" class="btn btn-success mx-3">Show All Users</a>
-    <a href="/createuser" class="btn btn-primary">Create New User</a>
+    <a href="/users" class="btn btn-success mx-3 mb-3">Show All Users</a>
+    <a href="/createuser" class="btn btn-primary mb-3">Create New User</a>
     </div>
+
+    </div>
+    
     <!-- <div class="text-center m-5 p-5">
     <a href="/users" class="btn btn-primary">Create New User</a>
     </div> -->
